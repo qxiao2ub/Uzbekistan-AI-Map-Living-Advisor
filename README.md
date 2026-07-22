@@ -1,60 +1,77 @@
 # Akbarxon AI Living Advisor for Uzbekistan
 
-A portfolio-ready Streamlit prototype that recommends cities in Uzbekistan from a user's natural-language living preferences.
+A Streamlit portfolio project that recommends cities in Uzbekistan from a user's natural-language living preferences.
 
-## Author / portfolio owner
+## Project team
 
-Akbarxon
+- **Author:** Akbarxon Nasirov
+- **Mentor:** Dr. Qingyang Xiao
 
-## Mentor
+The author and mentor are displayed in two places in the web app:
 
-Qingyang Xiao
+1. At the top of the left sidebar, together with the app title.
+2. In the **AI laboratory** tab under **Project team**.
 
-## Features
+## Main features
 
 - Natural-language preference parsing
+- Weighted and explainable city ranking
 - TF-IDF and cosine-similarity matching
-- Weighted, explainable city ranking
 - K-means city archetypes
 - Three-hidden-layer MLP neural-network demonstration
-- Like/dislike feedback with a Beta-Bernoulli contextual-bandit-style adjustment
-- Interactive Folium/OpenStreetMap city map
+- Like/dislike feedback with a Beta-Bernoulli bandit-style adjustment
+- Interactive Folium/OpenStreetMap visualization
 - Plotly comparisons and radar charts
-- Optional live weather and Wikipedia city context
-- GitHub and Streamlit Community Cloud deployment workflow
-
-## Important data note
-
-The included city scores are **illustrative prototype values**, not official measurements. Before public launch, replace them with licensed, dated, auditable data and show a source and update date for every metric.
+- Optional live weather and Wikipedia context
 
 ## Run locally
 
 ```bash
 python -m venv .venv
-# Windows: .venv\Scripts\activate
-# macOS/Linux: source .venv/bin/activate
+```
+
+Activate the environment:
+
+```bash
+# Windows PowerShell
+.venv\Scripts\Activate.ps1
+
+# macOS or Linux
+source .venv/bin/activate
+```
+
+Install and run:
+
+```bash
 pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## Deploy on Streamlit Community Cloud
+## Deploy with Streamlit Community Cloud
 
-1. Upload `app.py`, `cities_uzbekistan.csv`, `requirements.txt`, and `README.md` to a public GitHub repository.
-2. In Streamlit Community Cloud, create an app from the repository.
-3. Select `app.py` as the entry point.
-4. Use Python 3.12 when the platform allows runtime selection.
-5. Deploy and test the map, feedback controls, and optional live-data buttons.
+1. Extract this ZIP file.
+2. Create a new GitHub repository.
+3. Upload all files and folders from the extracted repository into the repository root.
+4. In Streamlit Community Cloud, select the GitHub repository.
+5. Set the main file path to `app.py`.
+6. Deploy the app.
 
-## Production upgrades
+The following files must stay together in the repository root:
 
-- Replace local JSON feedback storage with PostgreSQL, Supabase, or Firebase.
-- Add authenticated profiles and consent controls.
-- Connect licensed housing, grocery, transit, healthcare, education, safety, air-quality, and employment data.
-- Preserve source URLs, retrieval timestamps, and confidence values.
-- Add Uzbek and Russian localization.
-- Add fairness, privacy, security, and recommendation-quality monitoring.
-- Never infer protected traits or use sensitive data without a lawful, consented purpose.
+```text
+akbarxon-ai-living-advisor-updated/
+├── .streamlit/
+│   └── config.toml
+├── .gitignore
+├── app.py
+├── cities_uzbekistan.csv
+├── requirements.txt
+├── README.md
+└── Akbarxon_AI_Living_Advisor_Uzbekistan_Updated_Colab.ipynb
+```
 
-## Disclaimer
+## Data and model disclaimer
 
-This is an educational prototype. It does not provide legal, immigration, housing, medical, employment, or financial advice.
+The included city scores are illustrative prototype values rather than official measurements. Before a public release, replace them with licensed, dated, auditable data and show the source, retrieval date, geographic scope, and confidence for each metric.
+
+This educational prototype does not provide legal, immigration, housing, medical, employment, or financial advice.

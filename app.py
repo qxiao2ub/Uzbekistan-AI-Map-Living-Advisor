@@ -140,6 +140,25 @@ def inject_css() -> None:
             background: rgba(14,165,233,.12); font-weight: 700;
         }
         .small-note {font-size: .86rem; opacity: .78;}
+        .sidebar-brand {
+            padding: .85rem .8rem .78rem .8rem;
+            border: 1px solid rgba(14, 116, 144, .22);
+            border-radius: 16px;
+            background: linear-gradient(145deg, rgba(15,118,110,.10), rgba(67,56,202,.08));
+            margin: .2rem 0 .65rem 0;
+        }
+        .sidebar-brand-title {
+            font-size: 1.08rem; font-weight: 800; line-height: 1.25;
+            margin-bottom: .55rem;
+        }
+        .sidebar-team {font-size: .92rem; line-height: 1.55;}
+        .project-team-card {
+            border: 1px solid rgba(67,56,202,.20);
+            border-radius: 18px; padding: 1rem 1.15rem; margin: .2rem 0 1rem 0;
+            background: linear-gradient(135deg, rgba(15,118,110,.08), rgba(3,105,161,.08), rgba(67,56,202,.08));
+        }
+        .project-team-card h3 {margin: 0 0 .55rem 0;}
+        .project-team-card p {margin: 0; line-height: 1.65;}
         </style>
         """,
         unsafe_allow_html=True,
@@ -599,6 +618,18 @@ def main() -> None:
     )
 
     with st.sidebar:
+        st.markdown(
+            """
+            <div class="sidebar-brand">
+              <div class="sidebar-brand-title">🧭 Akbarxon AI Living Advisor</div>
+              <div class="sidebar-team">
+                <strong>Author:</strong> Akbarxon Nasirov<br>
+                <strong>Mentor:</strong> Dr. Qingyang Xiao
+              </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
         st.header("Your priorities")
         st.caption("Text is the main input. Sliders let you emphasize or correct specific priorities.")
         top_n = st.slider("Number of recommendations", 3, 8, 5)
@@ -774,6 +805,18 @@ def main() -> None:
         render_feedback_buttons(city, feedback_state, "explorer")
 
     with ai_tab:
+        st.markdown(
+            """
+            <div class="project-team-card">
+              <h3>👥 Project team</h3>
+              <p>
+                <strong>Author:</strong> Akbarxon Nasirov<br>
+                <strong>Mentor:</strong> Dr. Qingyang Xiao
+              </p>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
         st.subheader("What the prototype AI is doing")
         st.markdown(
             """
@@ -801,6 +844,7 @@ def main() -> None:
 
     st.divider()
     st.caption(
+        "Author: Akbarxon Nasirov · Mentor: Dr. Qingyang Xiao · "
         "Built as an educational prototype for Akbarxon's GitHub portfolio. "
         "The app does not provide legal, immigration, housing, medical, or financial advice."
     )
