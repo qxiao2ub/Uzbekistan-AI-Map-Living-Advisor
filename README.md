@@ -2,6 +2,14 @@
 
 A portfolio-ready Streamlit prototype that recommends cities in Uzbekistan from a user's natural-language living preferences.
 
+## Author / portfolio owner
+
+Akbarxon
+
+## Mentor
+
+Qingyang Xiao
+
 ## Features
 
 - Natural-language preference parsing
@@ -46,14 +54,6 @@ streamlit run app.py
 - Add Uzbek and Russian localization.
 - Add fairness, privacy, security, and recommendation-quality monitoring.
 - Never infer protected traits or use sensitive data without a lawful, consented purpose.
-
-## Author / portfolio owner
-
-Akbarxon
-
-## Mentor
-
-Qingyang Xiao
 
 ## Disclaimer
 
