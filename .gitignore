@@ -1,7 +1,10 @@
 __pycache__/
 *.py[cod]
-.venv/
+.DS_Store
 .env
-.streamlit/secrets.toml
+.venv/
+venv/
 feedback_state.json
-demo_preference_dnn.joblib
+*.joblib
+.streamlit/secrets.toml
+ui_source/.env

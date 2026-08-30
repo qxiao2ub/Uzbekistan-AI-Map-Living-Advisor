@@ -1,77 +1,83 @@
-# Akbarxon AI Living Advisor for Uzbekistan
+# Akbarxon AI Living Advisor — Uzbekistan
 
-A Streamlit portfolio project that recommends cities in Uzbekistan from a user's natural-language living preferences.
+**Author:** Akbarxon Nasirov  
+**Mentor:** Dr. Qingyang Xiao
 
-## Project team
+An AI-based living-advisor platform that helps users explore which Uzbekistan cities may fit their lifestyle preferences. Users can describe what matters in natural language — affordability, grocery prices, scenery, entertainment, safety, careers, healthcare, internet, education, nature, transportation, and more — and receive ranked city recommendations with map-based visualization.
 
-- **Author:** Akbarxon Nasirov
-- **Mentor:** Dr. Qingyang Xiao
+## New UI integration
 
-The author and mentor are displayed in two places in the web app:
+This version ports the complete visual language of the supplied React/Tailwind UI package into a Streamlit-native interface:
 
-1. At the top of the left sidebar, together with the app title.
-2. In the **AI laboratory** tab under **Project team**.
+- full-width image hero
+- light minimalist design system
+- muted green accents
+- featured city cards
+- image-based city detail layouts
+- feature/experience rows
+- pill-style buttons and navigation
+- dark footer
+- responsive layouts
 
-## Main features
+The original UI project is also retained in `ui_source/` for reference. Its `.env` file is intentionally not included.
 
-- Natural-language preference parsing
-- Weighted and explainable city ranking
-- TF-IDF and cosine-similarity matching
-- K-means city archetypes
-- Three-hidden-layer MLP neural-network demonstration
-- Like/dislike feedback with a Beta-Bernoulli bandit-style adjustment
-- Interactive Folium/OpenStreetMap visualization
-- Plotly comparisons and radar charts
-- Optional live weather and Wikipedia context
+See [`UI_MIGRATION.md`](UI_MIGRATION.md) for the design mapping.
+
+## AI / data features
+
+1. **Natural-language preference parsing** turns everyday requests into transparent lifestyle weights.
+2. **TF-IDF + cosine similarity** compares user language against city descriptions and tags.
+3. **Machine learning** uses K-means to organize prototype cities into lifestyle archetypes.
+4. **Deep neural-network demonstration** uses a 64 → 32 → 16 MLP to estimate a user-city like probability from synthetic demonstration interactions.
+5. **Feedback learning** uses a Beta-Bernoulli bandit signal from likes/dislikes.
+6. **Interactive mapping** uses Folium/OpenStreetMap.
+7. **Optional live context** can retrieve current weather from Open-Meteo and city summaries from Wikipedia when network access is available.
+
+## Repository structure
+
+```text
+.
+├── app.py
+├── cities_uzbekistan.csv
+├── requirements.txt
+├── README.md
+├── UI_MIGRATION.md
+├── .streamlit/
+│   └── config.toml
+├── assets/
+│   └── uploaded UI image assets
+├── ui_source/
+│   └── original uploaded React/Tailwind source (without .env)
+└── Akbarxon_AI_Living_Advisor_Uzbekistan_Updated_Colab.ipynb
+```
 
 ## Run locally
 
 ```bash
 python -m venv .venv
-```
-
-Activate the environment:
-
-```bash
-# Windows PowerShell
-.venv\Scripts\Activate.ps1
-
-# macOS or Linux
-source .venv/bin/activate
-```
-
-Install and run:
-
-```bash
+# Windows: .venv\Scripts\activate
+# macOS/Linux: source .venv/bin/activate
 pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## Deploy with Streamlit Community Cloud
+## Deploy on Streamlit Community Cloud
 
-1. Extract this ZIP file.
-2. Create a new GitHub repository.
-3. Upload all files and folders from the extracted repository into the repository root.
-4. In Streamlit Community Cloud, select the GitHub repository.
-5. Set the main file path to `app.py`.
-6. Deploy the app.
+1. Extract this ZIP and upload all repository contents to GitHub.
+2. In Streamlit Community Cloud, create a new app from that GitHub repository.
+3. Choose `app.py` as the main file.
+4. Deploy. Streamlit will install dependencies from `requirements.txt`.
 
-The following files must stay together in the repository root:
+No paid API key is required for the core prototype.
 
-```text
-akbarxon-ai-living-advisor-updated/
-├── .streamlit/
-│   └── config.toml
-├── .gitignore
-├── app.py
-├── cities_uzbekistan.csv
-├── requirements.txt
-├── README.md
-└── Akbarxon_AI_Living_Advisor_Uzbekistan_Updated_Colab.ipynb
-```
+## Prototype / responsible-use note
 
-## Data and model disclaimer
+The city scores in `cities_uzbekistan.csv` are illustrative prototype values, not official statistics. Before public or production use, replace them with licensed, dated, auditable sources and cite each source. Housing, employment, safety, healthcare, immigration, legal, tax, and financial decisions should be independently verified.
 
-The included city scores are illustrative prototype values rather than official measurements. Before a public release, replace them with licensed, dated, auditable data and show the source, retrieval date, geographic scope, and confidence for each metric.
+The bundled images are design assets from the uploaded UI and are used as generic lifestyle visuals; they are not presented as verified photographs of specific Uzbekistan cities.
 
-This educational prototype does not provide legal, immigration, housing, medical, employment, or financial advice.
+## Live app
+
+Streamlit domain: `https://uzbekistan-ai-map-living-advisor.streamlit.app/`
+
+A QR code for the live app is included at `assets/app_qr_code.png`.
