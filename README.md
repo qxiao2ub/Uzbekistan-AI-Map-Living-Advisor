@@ -1,4 +1,4 @@
-# Akbarxon AI Living Advisor: Uzbekistan
+# Akbarxon AI Living Advisor — Uzbekistan
 
 **Author:** Akbarxon Nasirov  
 **Mentor:** Dr. Qingyang Xiao
@@ -81,3 +81,7 @@ The bundled images are design assets from the uploaded UI and are used as generi
 Streamlit domain: `https://uzbekistan-ai-map-living-advisor.streamlit.app/`
 
 A QR code for the live app is included at `assets/app_qr_code.png`.
+
+## Streamlit Cloud header-overlap fix
+
+This repository includes a layout fix for Streamlit Community Cloud's fixed native toolbar. The main content container now reserves a safe top spacing before the custom Akbarxon AI Living Advisor brand/navigation area, while the sidebar keeps its compact spacing. This prevents the application title and navigation from being hidden underneath the Streamlit toolbar on wide desktop layouts.

@@ -490,12 +490,37 @@ def inject_css() -> None:
         }
         html {scroll-behavior: smooth;}
         .stApp {background: var(--bg); color: var(--fg);}
-        .block-container {max-width: 1280px; padding-top: 1rem; padding-bottom: 4rem;}
+
+        /*
+         * Streamlit Community Cloud keeps its native toolbar fixed at the top.
+         * The previous 1rem top padding pulled the custom brand/navigation under
+         * that toolbar. Reserve a safe top zone for the main canvas instead.
+         */
+        .block-container {
+          max-width: 1280px;
+          padding-top: 4.75rem !important;
+          padding-bottom: 4rem;
+        }
+        [data-testid="stMainBlockContainer"] {
+          max-width: 1280px;
+          padding-top: 4.75rem !important;
+          padding-bottom: 4rem;
+        }
         h1, h2, h3, h4 {letter-spacing: -0.02em;}
         [data-testid="stSidebar"] {background: #f9faf9; border-right: 1px solid var(--border);}
-        [data-testid="stSidebar"] .block-container {padding-top: 1rem;}
+        [data-testid="stSidebar"] .block-container {padding-top: 1rem !important;}
+        [data-testid="stSidebar"] [data-testid="stSidebarContent"] {padding-top: .35rem;}
 
-        .top-brand {display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.5rem .15rem 1rem .15rem;}
+        .top-brand {
+          display:flex;
+          align-items:center;
+          justify-content:space-between;
+          gap:1rem;
+          min-height:42px;
+          padding:.35rem .15rem 1rem .15rem;
+          position:relative;
+          z-index:1;
+        }
         .brand-left {display:flex; align-items:center; gap:.7rem;}
         .brand-mark {width:34px; height:34px; border-radius:50%; display:grid; place-items:center; border:1px solid var(--border); background:white; font-size:18px;}
         .brand-name {font-size:1.02rem; font-weight:500; letter-spacing:.01em;}
