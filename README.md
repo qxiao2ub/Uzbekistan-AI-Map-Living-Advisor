@@ -1,4 +1,4 @@
-# Akbarxon AI Living Advisor — Uzbekistan
+# Akbarxon AI Living Advisor: Uzbekistan
 
 **Author:** Akbarxon Nasirov  
 **Mentor:** Dr. Qingyang Xiao
