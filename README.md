@@ -1,4 +1,4 @@
-# Akbarxon AI Living Advisor: Uzbekistan
+# Akbarxon AI Living Advisor — Uzbekistan
 
 **Author:** Akbarxon Nasirov  
 **Mentor:** Dr. Qingyang Xiao
@@ -23,6 +23,14 @@ The original UI project is also retained in `ui_source/` for reference. Its `.en
 
 See [`UI_MIGRATION.md`](UI_MIGRATION.md) for the design mapping.
 
+
+## City-photo and card-rendering repair
+
+- Every city card, featured match, recommendation result, and detailed city profile now resolves its photo by the exact city name.
+- The 16 mapped images are stored under `assets/cities/` and are included in the ZIP.
+- City-card HTML is rendered with `st.html()` and compact, escaped markup. This prevents Streamlit/Markdown from exposing closing tags such as `</div>` inside the visible city description area.
+- The city-specific photo is resolved by exact city name at render time, with a fallback asset if a file is ever removed.
+
 ## AI / data features
 
 1. **Natural-language preference parsing** turns everyday requests into transparent lifestyle weights.
@@ -42,10 +50,13 @@ See [`UI_MIGRATION.md`](UI_MIGRATION.md) for the design mapping.
 ├── requirements.txt
 ├── README.md
 ├── UI_MIGRATION.md
+├── CITY_IMAGE_MAPPING.md
+├── CHANGELOG.md
 ├── .streamlit/
 │   └── config.toml
 ├── assets/
-│   └── uploaded UI image assets
+│   ├── cities/                # city-specific photos supplied for all 16 profiles
+│   └── original UI design assets
 ├── ui_source/
 │   └── original uploaded React/Tailwind source (without .env)
 └── Akbarxon_AI_Living_Advisor_Uzbekistan_Updated_Colab.ipynb
@@ -74,7 +85,7 @@ No paid API key is required for the core prototype.
 
 The city scores in `cities_uzbekistan.csv` are illustrative prototype values, not official statistics. Before public or production use, replace them with licensed, dated, auditable sources and cite each source. Housing, employment, safety, healthcare, immigration, legal, tax, and financial decisions should be independently verified.
 
-The bundled images are design assets from the uploaded UI and are used as generic lifestyle visuals; they are not presented as verified photographs of specific Uzbekistan cities.
+The city cards and detailed profiles use the 16 city-specific photos supplied with this revision. The remaining hero/detail artwork from the original UI package is retained only for general interface design. Confirm image ownership, attribution, and publication rights before a public production release.
 
 ## Live app
 

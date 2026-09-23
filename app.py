@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import base64
+import html
 import json
 import math
 import re
@@ -109,8 +110,35 @@ SYNONYMS = {
     ],
 }
 
-CARD_IMAGES = ["spot-forest.jpg", "spot-lake.jpg", "spot-meadow.jpg"]
-DETAIL_IMAGES = ["detail-forest-1.jpg", "detail-lake-1.jpg", "detail-meadow-1.jpg"]
+CITY_IMAGE_FILES = {
+    'Tashkent': 'cities/tashkent.jpg',
+    'Samarkand': 'cities/samarkand.jpg',
+    'Bukhara': 'cities/bukhara.jpg',
+    'Khiva': 'cities/khiva.jpg',
+    'Nukus': 'cities/nukus.jpg',
+    'Fergana': 'cities/fergana.jpg',
+    'Andijan': 'cities/andijan.jpg',
+    'Namangan': 'cities/namangan.jpg',
+    'Qarshi': 'cities/qarshi.jpg',
+    'Termez': 'cities/termez.jpg',
+    'Jizzakh': 'cities/jizzakh.jpg',
+    'Gulistan': 'cities/gulistan.jpg',
+    'Navoi': 'cities/navoi.jpg',
+    'Urgench': 'cities/urgench.jpg',
+    'Kokand': 'cities/kokand.jpg',
+    'Shahrisabz': 'cities/shahrisabz.jpg',
+}
+FALLBACK_CITY_IMAGE = "spot-forest.jpg"
+
+
+def city_image_file(city: object) -> str:
+    """Return the repository-relative image assigned to a city."""
+    filename = CITY_IMAGE_FILES.get(str(city).strip(), FALLBACK_CITY_IMAGE)
+    return filename if (ASSET_DIR / filename).exists() else FALLBACK_CITY_IMAGE
+
+
+def city_image_path(city: object) -> Path:
+    return ASSET_DIR / city_image_file(city)
 
 
 def image_data_uri(filename: str) -> str:
@@ -543,14 +571,14 @@ def inject_css() -> None:
         .section-title {font-size:2rem; font-weight:300; margin:0 0 .7rem 0;}
         .section-sub {font-size:.93rem; color:var(--muted); max-width:620px; margin:0 auto; line-height:1.6;}
 
-        .city-card-html {overflow:hidden; border:1px solid var(--border); background:var(--card); border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,.055); min-height:100%;}
+        .city-card-html {overflow:hidden; border:1px solid var(--border); background:var(--card); border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,.055); min-height:100%; height:100%; margin-bottom:1.1rem;}
         .city-card-html img {width:100%; height:205px; object-fit:cover; display:block;}
         .city-card-body {padding:1.25rem 1.25rem 1.35rem 1.25rem;}
         .city-card-top {display:flex; justify-content:space-between; gap:1rem; align-items:flex-start;}
         .city-card-title {font-size:1.05rem; font-weight:500; margin:0;}
         .city-card-score {font-size:.76rem; padding:.3rem .55rem; border-radius:999px; background:var(--accent); color:var(--primary-dark); white-space:nowrap;}
         .city-region {font-size:.78rem; color:var(--muted); margin:.3rem 0 .85rem 0;}
-        .city-desc {font-size:.86rem; color:#5e5e5e; line-height:1.55; min-height:64px;}
+        .city-desc {font-size:.86rem; color:#5e5e5e; line-height:1.55; min-height:5.35em; overflow:hidden; display:-webkit-box; -webkit-line-clamp:4; -webkit-box-orient:vertical;}
         .chips {display:flex; flex-wrap:wrap; gap:6px; margin-top:.8rem;}
         .chip {font-size:.64rem; text-transform:uppercase; letter-spacing:.08em; background:var(--accent); padding:.3rem .45rem; border-radius:4px; color:#4f655a;}
 
@@ -649,30 +677,51 @@ def render_section_head(eyebrow: str, title: str, subtitle: str) -> None:
     )
 
 
-def render_city_card(row: pd.Series, image_file: str, rank: int | None = None) -> None:
-    image = image_data_uri(image_file)
+def build_city_card_html(row: pd.Series, rank: int | None = None) -> str:
+    """Build one self-contained card without Markdown blank-line parsing issues."""
+    city = html.escape(str(row.get("city", "Unknown city")))
+    region = html.escape(str(row.get("region", "")))
+    description = html.escape(str(row.get("description", "")))
+    image = html.escape(image_data_uri(city_image_file(row.get("city", ""))), quote=True)
     tags = [item.strip() for item in str(row.get("tags", "")).split(",") if item.strip()][:3]
-    chips = "".join(f'<span class="chip">{tag}</span>' for tag in tags)
-    score = float(row.get("match_score", 0.0))
-    score_html = f'<span class="city-card-score">{score:.1f} match</span>' if score else ""
-    rank_text = f"#{rank} · " if rank else ""
-    st.markdown(
-        f"""
-        <div class="city-card-html">
-          <img src="{image}" alt="Lifestyle design visual">
-          <div class="city-card-body">
-            <div class="city-card-top">
-              <div><div class="city-card-title">{rank_text}{row['city']}</div></div>
-              {score_html}
-            </div>
-            <div class="city-region">📍 {row['region']}</div>
-            <div class="city-desc">{row['description']}</div>
-            <div class="chips">{chips}</div>
-          </div>
-        </div>
-        """,
-        unsafe_allow_html=True,
+    chips = "".join(f'<span class="chip">{html.escape(tag)}</span>' for tag in tags)
+
+    raw_score = row.get("match_score", 0.0)
+    try:
+        score = float(raw_score)
+    except (TypeError, ValueError):
+        score = 0.0
+    score_html = (
+        f'<span class="city-card-score">{score:.1f} match</span>'
+        if math.isfinite(score) and score > 0
+        else ""
     )
+    rank_text = f"#{rank} · " if rank else ""
+
+    # Join the HTML fragments directly. A blank line inside a raw Markdown HTML
+    # block can terminate the block and expose closing tags as visible text.
+    return "".join(
+        [
+            '<div class="city-card-html">',
+            f'<img src="{image}" alt="{city} city photo" loading="lazy">',
+            '<div class="city-card-body">',
+            '<div class="city-card-top">',
+            f'<div class="city-card-title">{rank_text}{city}</div>',
+            score_html,
+            '</div>',
+            f'<div class="city-region">&#128205; {region}</div>',
+            f'<div class="city-desc">{description}</div>',
+            f'<div class="chips">{chips}</div>',
+            '</div>',
+            '</div>',
+        ]
+    )
+
+
+def render_city_card(row: pd.Series, rank: int | None = None) -> None:
+    # st.html renders the card as HTML rather than asking the Markdown parser to
+    # infer where the raw HTML block begins and ends.
+    st.html(build_city_card_html(row, rank=rank))
 
 
 def render_experience_rows() -> None:
@@ -746,7 +795,7 @@ def render_home(
     cols = st.columns(3)
     for idx, (col, (_, row)) in enumerate(zip(cols, ranked.iterrows())):
         with col:
-            render_city_card(row, CARD_IMAGES[idx % len(CARD_IMAGES)], idx + 1)
+            render_city_card(row, rank=idx + 1)
 
     st.markdown("<div style='height:3rem'></div>", unsafe_allow_html=True)
     render_section_head(
@@ -829,10 +878,10 @@ def render_recommend(
     st.markdown("### Top matches")
     for index, row in ranked.iterrows():
         reasons = top_reasons(row, weights)
-        image = CARD_IMAGES[index % len(CARD_IMAGES)]
+        image_path = city_image_path(row["city"])
         left, right = st.columns([1, 2.2])
         with left:
-            st.image(ASSET_DIR / image, use_container_width=True)
+            st.image(image_path, use_container_width=True, caption=f"{row['city']} city photo")
         with right:
             st.markdown(
                 f"""
@@ -908,7 +957,7 @@ def render_cities(df: pd.DataFrame, feedback_state: Dict[str, Dict[str, int]]) -
     render_section_head(
         "City explorer",
         "Browse every prototype profile",
-        "Cards mirror the uploaded location-card UI. The photos are lifestyle design assets from the uploaded UI, not documentary photos of the named cities.",
+        "Each profile now uses the city-specific photo supplied for that named city, while preserving the uploaded location-card design.",
     )
 
     search = st.text_input("Filter cities", placeholder="Search by city, region, or tag")
@@ -926,14 +975,14 @@ def render_cities(df: pd.DataFrame, feedback_state: Dict[str, Dict[str, int]]) -
         batch = filtered.iloc[start : start + 3]
         for offset, (col, (_, row)) in enumerate(zip(cols, batch.iterrows())):
             with col:
-                render_city_card(row, CARD_IMAGES[(start + offset) % len(CARD_IMAGES)])
+                render_city_card(row)
 
     st.markdown("### Detailed city profile")
     city = st.selectbox("Select a city", df["city"].tolist(), key="city_explorer")
     row = df.loc[df["city"] == city].iloc[0]
     left, right = st.columns([1.15, 1])
     with left:
-        st.image(ASSET_DIR / DETAIL_IMAGES[df.index[df["city"] == city][0] % len(DETAIL_IMAGES)], use_container_width=True)
+        st.image(city_image_path(city), use_container_width=True, caption=f"{city} city photo")
         st.markdown(f"## {row['city']}")
         st.write(f"**Region:** {row['region']}")
         st.write(row["description"])

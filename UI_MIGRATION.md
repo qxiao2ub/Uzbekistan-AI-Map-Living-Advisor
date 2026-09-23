@@ -20,6 +20,10 @@ The original UI was a Vite/React/Tailwind application. Streamlit Community Cloud
 
 The original uploaded UI source is preserved under `ui_source/` for design reference and future front-end development. The uploaded `.env` is intentionally excluded from the repository.
 
-## Important image note
+## City-specific image update
 
-The bundled images came from the uploaded UI package and are used as generic lifestyle/design visuals. They are not asserted to be verified photographs of the Uzbekistan cities shown next to them.
+The original hero and decorative assets remain from the uploaded UI package. The city explorer, featured recommendations, recommendation results, and detailed profiles now use the supplied city-specific photos from `assets/cities/`, mapped by exact city name.
+
+## Visible-HTML repair
+
+City cards are emitted through `st.html()` as compact, escaped markup. This prevents a blank line in a raw Markdown HTML block from terminating the block and showing closing tags such as `</div>` to users.
