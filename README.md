@@ -98,6 +98,12 @@ A QR code for the live app is included at `assets/app_qr_code.png`.
 This repository includes a layout fix for Streamlit Community Cloud's fixed native toolbar. The main content container now reserves a safe top spacing before the custom Akbarxon AI Living Advisor brand/navigation area, while the sidebar keeps its compact spacing. This prevents the application title and navigation from being hidden underneath the Streamlit toolbar on wide desktop layouts.
 
 
+## Startup error fix (October 2026)
+
+The previous Streamlit deployment stopped at startup with `NameError: name 't' is not defined`. The cause was a module-import ordering bug: several entries inside the English `TRANSLATIONS` dictionary called the runtime `t()` helper before that helper had been defined. Those entries are now literal English strings, while `t()` remains the runtime localization lookup function.
+
+The corrected release has been checked with Python compilation, AST inspection, translation-key consistency tests, city-data loading, recommendation smoke tests, and city-card HTML generation.
+
 ## Visitor counter
 
 The app includes a cumulative visitor counter without adding a database to the GitHub repository. The app calls the public CounterAPI service once per Streamlit browser session and displays the cumulative total in the sidebar and main canvas. CounterAPI documents a public, no-auth counter endpoint and states that its free counter tools require no database management.

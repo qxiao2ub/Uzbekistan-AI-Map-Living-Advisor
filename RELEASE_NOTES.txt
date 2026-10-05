@@ -1,5 +1,8 @@
-Akbarxon AI Living Advisor - cumulative visitor counter + English/Russian/Uzbek UI
+Akbarxon AI Living Advisor - Streamlit startup debug fix
 
 Entry point: app.py
-Counter: CounterAPI external persistence, incremented once per Streamlit session
 Languages: English, Русский, O'zbek
+Visitor counter: cumulative external CounterAPI service, one increment per Streamlit session
+Startup fix: removed module-level calls to t() before t() definition
+City cards: st.html() + escaped compact HTML to prevent visible raw tags
+City photos: all 16 city-specific supplied photos preserved under assets/cities/
