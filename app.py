@@ -131,6 +131,191 @@ CITY_IMAGE_FILES = {
 FALLBACK_CITY_IMAGE = "spot-forest.jpg"
 
 
+# -----------------------------------------------------------------------------
+# Localization
+# -----------------------------------------------------------------------------
+LANGUAGE_OPTIONS = {
+    "English": "en",
+    "Русский": "ru",
+    "O'zbek": "uz",
+}
+
+TRANSLATIONS = {
+    "en": {
+        "nav_home": "Home", "nav_recommend": "Recommend", "nav_map": "Map & Compare",
+        "nav_cities": "Cities", "nav_ai": "AI Lab", "nav_about": "About",
+        "language": "Language", "app_visits": "Cumulative App Visits", "visit_note": "One visit is counted once per browser session.",
+        "your_priorities": "Your priorities", "priority_caption": "Text is the main input. Sliders let you emphasize or correct specific priorities.",
+        "num_recs": "Number of recommendations", "advanced": "Advanced preference sliders", "prototype_note": "Prototype note",
+        "prototype_copy": "City scores are illustrative, not official statistics. Verify housing, employment, safety, healthcare, visa, and legal information before relocating.",
+        "featured": "Featured matches", "featured_title": "Lifestyle ideas, ranked for you",
+        "featured_sub": "A first look at cities selected by the same AI engine used in the full recommendation workspace.",
+        "experience": "The experience", "experience_title": "Minimal design, useful intelligence",
+        "experience_sub": "The uploaded UI's calm, image-led design language is preserved while the interaction is rebuilt around city discovery.",
+        "advisor": "AI advisor", "advisor_title": "Describe your ideal place",
+        "advisor_sub": "Use natural language now; detailed controls are available in the sidebar and the Recommend workspace.",
+        "lifestyle_request": "Lifestyle request", "find_cities": "Find my cities", "updated": "Recommendations updated. Open the Recommend or Map & Compare workspace for full details.",
+        "personalized": "Personalized advisor", "tell_ai": "Tell the AI what matters",
+        "tell_ai_sub": "Text is the main signal. The ranking engine combines interpretable lifestyle features, NLP similarity, a neural model, and feedback.",
+        "question": t("question"), "find_best": t("find_best"),
+        "interpret": t("interpret"), "signals": t("signals"), "preference": "Preference", "weight": "Weight (%)", "top_matches": "Top matches",
+        "why_fits": "Why it fits", "hybrid": "Hybrid components", "optional_live": "Optional live context", "city": t("city"),
+        "fetch_context": t("fetch_context"), "temp": t("temp"), "feels": t("feels"), "conditions": t("conditions"), "source": t("source"),
+        "map_compare": "Map & compare", "map_title": "See the recommendations geographically", "map_sub": "The map uses OpenStreetMap tiles and overlays the prototype Uzbekistan city profiles and current recommendation ranking.",
+        "score_compare": "Recommendation score comparison", "choose_cities": t("choose_cities"), "profile": "Detailed city profile", "select_city": t("select_city"),
+        "filter_cities": t("filter_cities"), "search_placeholder": "Search by city, region, or tag", "city_explorer": "City explorer", "city_explorer_title": "Browse every prototype profile",
+        "city_explorer_sub": "Each profile now uses the city-specific photo supplied for that named city, while preserving the uploaded location-card design.",
+        "region": "Region", "tags": "Tags", "score": "Prototype score", "dimension": "Dimension",
+        "ai_lab": "AI laboratory", "ai_title": "How the recommendation brain works",
+        "ai_sub": "The prototype intentionally combines explainable rules with machine learning, a neural-network demonstration, and feedback learning.",
+        "data_archetypes": "Data-driven city archetypes", "team": "Project team",
+        "production_warning": "For production, replace illustrative scores and synthetic training data with licensed, dated, auditable sources. The app itself does not use a database for visitor counting; the cumulative counter is maintained by an external counter service.",
+        "about": "About the project", "about_title": "Living decisions, made easier to explore", "about_sub": "A portfolio-ready prototype that turns broad lifestyle preferences into a structured, visual city-comparison workflow.",
+        "included": "What is included", "ui_preserve": "UI source preservation", "footer": "AI-assisted city discovery for Uzbekistan · Streamlit portfolio prototype",
+        "counter_unavailable": "Counter temporarily unavailable",
+        "like": "Like", "not_for_me": "Not for me", "feedback_saved": "Feedback saved for",
+        "natural_language": "Natural-language understanding", "natural_desc": "Turn everyday phrases such as 'cheap groceries' or 'great sunsets' into measurable lifestyle priorities.",
+        "map_first": "Map-first exploration", "map_first_desc": "See candidate cities geographically and inspect how recommendations relate across Uzbekistan.",
+        "transparent": "Transparent scoring", "transparent_desc": "Combine preference features, text similarity, neural-network estimates, and feedback into an explainable score.",
+        "feedback_learning": "Feedback learning", "feedback_desc": "Likes and dislikes update a lightweight bandit signal so the prototype can adapt over time.",
+    },
+    "ru": {
+        "nav_home": "Главная", "nav_recommend": "Рекомендации", "nav_map": "Карта и сравнение", "nav_cities": "Города", "nav_ai": "ИИ-лаборатория", "nav_about": "О проекте",
+        "language": "Язык", "app_visits": "Накопленные посещения", "visit_note": "Одно посещение учитывается один раз за сессию браузера.",
+        "your_priorities": "Ваши приоритеты", "priority_caption": "Основной ввод — текст. Ползунки позволяют усилить или скорректировать отдельные приоритеты.",
+        "num_recs": "Количество рекомендаций", "advanced": "Расширенные ползунки приоритетов", "prototype_note": "Примечание о прототипе",
+        "prototype_copy": "Оценки городов являются демонстрационными, а не официальной статистикой. Перед переездом проверяйте жильё, работу, безопасность, медицину, визовые и юридические сведения.",
+        "featured": "Избранные совпадения", "featured_title": "Варианты образа жизни, ранжированные для вас", "featured_sub": "Первые города, выбранные тем же ИИ-модулем, который используется в полном рабочем пространстве рекомендаций.",
+        "experience": "Возможности", "experience_title": "Минималистичный дизайн и полезный интеллект", "experience_sub": "Спокойный визуальный стиль загруженного интерфейса сохранён, а взаимодействие перестроено вокруг поиска города.",
+        "advisor": "ИИ-консультант", "advisor_title": "Опишите идеальное место", "advisor_sub": "Используйте обычный язык; дополнительные настройки находятся на боковой панели и на странице рекомендаций.",
+        "lifestyle_request": "Запрос об образе жизни", "find_cities": "Найти мои города", "updated": "Рекомендации обновлены. Откройте раздел рекомендаций или карты для подробностей.",
+        "personalized": "Персональный консультант", "tell_ai": "Расскажите ИИ, что важно", "tell_ai_sub": "Основной сигнал — текст. Ранжирование объединяет интерпретируемые параметры, NLP-сходство, нейросеть и обратную связь.",
+        "question": "Какое место вы ищете?", "find_best": "Найти лучшие города", "interpret": "Как ИИ интерпретировал запрос", "signals": "Обнаруженные сигналы:", "preference": "Приоритет", "weight": "Вес (%)", "top_matches": "Лучшие совпадения",
+        "why_fits": "Почему подходит", "hybrid": "Гибридные компоненты", "optional_live": "Дополнительный актуальный контекст", "city": "Город", "fetch_context": "Получить погоду и краткую сводку",
+        "temp": "Температура", "feels": "По ощущениям", "conditions": "Условия", "source": "Открыть источник",
+        "map_compare": "Карта и сравнение", "map_title": "Посмотрите рекомендации на карте", "map_sub": "Карта использует OpenStreetMap и показывает прототипные профили городов Узбекистана и их текущий рейтинг.",
+        "score_compare": "Сравнение оценок", "choose_cities": "Выберите до трёх городов для подробного сравнения", "profile": "Подробный профиль города", "select_city": "Выберите город",
+        "filter_cities": "Фильтр городов", "search_placeholder": "Поиск по городу, региону или тегу", "city_explorer": "Исследователь городов", "city_explorer_title": "Просмотрите все прототипные профили",
+        "city_explorer_sub": "Каждый профиль использует фотографию, предоставленную для соответствующего города, сохраняя дизайн загруженных карточек.", "region": "Регион", "tags": "Теги", "score": "Прототипная оценка", "dimension": "Параметр",
+        "ai_lab": "ИИ-лаборатория", "ai_title": "Как работает рекомендательный модуль", "ai_sub": "Прототип объединяет объяснимые правила, машинное обучение, демонстрационную нейросеть и обучение по обратной связи.",
+        "data_archetypes": "Архетипы городов на основе данных", "team": "Команда проекта", "production_warning": "Для промышленного использования замените демонстрационные оценки и синтетические данные на лицензированные, датированные и проверяемые источники. В приложении нет базы данных для счётчика; накопленный счёт хранится внешним сервисом счётчика.",
+        "about": "О проекте", "about_title": "Изучать варианты жизни стало проще", "about_sub": "Прототип превращает широкие предпочтения образа жизни в структурированный визуальный процесс сравнения городов.", "included": "Что входит", "ui_preserve": "Сохранение UI-источника", "footer": "ИИ-поиск вариантов для жизни в Узбекистане · портфолио-прототип Streamlit",
+        "counter_unavailable": "Счётчик временно недоступен", "like": "Нравится", "not_for_me": "Мне не подходит", "feedback_saved": "Отзыв сохранён для",
+        "natural_language": "Понимание естественного языка", "natural_desc": "Обычные фразы вроде «дешёвые продукты» или «красивые закаты» превращаются в измеримые приоритеты.", "map_first": "Исследование с картой", "map_first_desc": "Смотрите города на карте и изучайте их взаимное расположение по Узбекистану.", "transparent": "Прозрачное ранжирование", "transparent_desc": "Параметры предпочтений, текстовое сходство, нейросетевые оценки и обратная связь объединяются в объяснимый балл.", "feedback_learning": "Обучение по отзывам", "feedback_desc": "Лайки и дизлайки обновляют лёгкий bandit-сигнал, помогая прототипу адаптироваться.",
+    },
+    "uz": {
+        "nav_home": "Bosh sahifa", "nav_recommend": "Tavsiyalar", "nav_map": "Xarita va taqqoslash", "nav_cities": "Shaharlar", "nav_ai": "AI laboratoriya", "nav_about": "Loyiha haqida",
+        "language": "Til", "app_visits": "Jami tashriflar", "visit_note": "Har bir brauzer sessiyasida bitta tashrif bir marta hisoblanadi.",
+        "your_priorities": "Sizning ustuvorliklaringiz", "priority_caption": "Asosiy kiritish matn orqali. Slayderlar alohida ustuvorliklarni kuchaytiradi yoki tuzatadi.",
+        "num_recs": "Tavsiyalar soni", "advanced": "Kengaytirilgan ustuvorlik slayderlari", "prototype_note": "Prototip eslatmasi",
+        "prototype_copy": "Shahar ballari namuna uchun berilgan, rasmiy statistika emas. Ko‘chishdan oldin uy-joy, ish, xavfsizlik, tibbiyot, viza va huquqiy ma’lumotlarni tekshiring.",
+        "featured": "Tanlangan mosliklar", "featured_title": "Siz uchun saralangan turmush variantlari", "featured_sub": "To‘liq tavsiya ish maydonida ishlatiladigan AI dvigateli tanlagan shaharlarning qisqa ko‘rinishi.",
+        "experience": "Imkoniyatlar", "experience_title": "Minimal dizayn, foydali intellekt", "experience_sub": "Yuklangan UI ning sokin, tasvirga boy uslubi saqlandi va tajriba shahar izlash atrofida qayta qurildi.",
+        "advisor": "AI maslahatchi", "advisor_title": "Ideal joyingizni tasvirlang", "advisor_sub": "Oddiy tilda yozing; batafsil sozlamalar yon panelda va Tavsiyalar bo‘limida mavjud.",
+        "lifestyle_request": "Turmush so‘rovi", "find_cities": "Shaharlarimni topish", "updated": "Tavsiyalar yangilandi. Batafsil ma’lumot uchun Tavsiyalar yoki Xarita va taqqoslash bo‘limini oching.",
+        "personalized": "Shaxsiy AI maslahatchi", "tell_ai": "AI ga siz uchun nima muhimligini ayting", "tell_ai_sub": "Asosiy signal — matn. Reyting tushunarli turmush ko‘rsatkichlari, NLP o‘xshashligi, neyron model va fikr-mulohazani birlashtiradi.",
+        "question": "Qanday joy izlayapsiz?", "find_best": "Eng mos shaharlarni topish", "interpret": "AI so‘rovingizni qanday talqin qildi", "signals": "Aniqlangan signallar:", "preference": "Ustuvorlik", "weight": "Og‘irlik (%)", "top_matches": "Eng mos variantlar",
+        "why_fits": "Nega mos keladi", "hybrid": "Gibrid komponentlar", "optional_live": "Qo‘shimcha jonli ma’lumot", "city": "Shahar", "fetch_context": "Ob-havo va shahar xulosasini olish",
+        "temp": "Harorat", "feels": "Seziladigan harorat", "conditions": "Holat", "source": "Manba maqolasini ochish",
+        "map_compare": "Xarita va taqqoslash", "map_title": "Tavsiyalarni xaritada ko‘ring", "map_sub": "Xarita OpenStreetMap asosida ishlaydi va O‘zbekiston shaharlarining prototip profillari hamda joriy reytinglarini ko‘rsatadi.",
+        "score_compare": "Tavsiya ballarini taqqoslash", "choose_cities": "Batafsil taqqoslash uchun uchtagacha shahar tanlang", "profile": "Shahar profili", "select_city": "Shaharni tanlang",
+        "filter_cities": "Shaharlarni filtrlash", "search_placeholder": "Shahar, hudud yoki teg bo‘yicha qidirish", "city_explorer": "Shaharlar tadqiqotchisi", "city_explorer_title": "Barcha prototip profillarini ko‘ring",
+        "city_explorer_sub": "Har bir profil shu shaharga biriktirilgan suratdan foydalanadi va yuklangan location-card dizaynini saqlaydi.", "region": "Hudud", "tags": "Teglar", "score": "Prototip balli", "dimension": "Yo‘nalish",
+        "ai_lab": "AI laboratoriya", "ai_title": "Tavsiya miyasi qanday ishlaydi", "ai_sub": "Prototip tushunarli qoidalar, mashinaviy o‘rganish, namoyish neyron tarmog‘i va fikr-mulohaza orqali o‘rganishni birlashtiradi.",
+        "data_archetypes": "Ma’lumotga asoslangan shahar arxetiplari", "team": "Loyiha jamoasi", "production_warning": "Ishlab chiqarish versiyasida namuna ballari va sintetik ma’lumotlarni litsenziyalangan, sanasi ko‘rsatilgan va tekshiriladigan manbalar bilan almashtiring. Ilova tashrif hisoblagichi uchun ma’lumotlar bazasidan foydalanmaydi; jamlanma hisob tashqi counter xizmatida saqlanadi.",
+        "about": "Loyiha haqida", "about_title": "Yashash qarorlarini o‘rganish osonroq", "about_sub": "Prototip keng turmush afzalliklarini tuzilgan va vizual shahar taqqoslash jarayoniga aylantiradi.", "included": "Nimalar mavjud", "ui_preserve": "UI manbasini saqlash", "footer": "O‘zbekistonda yashash variantlarini AI yordamida o‘rganish · Streamlit portfolio prototipi",
+        "counter_unavailable": "Hisoblagich vaqtincha mavjud emas", "like": "Yoqdi", "not_for_me": "Menga mos emas", "feedback_saved": "Fikr saqlandi:",
+        "natural_language": "Tabiiy tilni tushunish", "natural_desc": "«Arzon oziq-ovqat» yoki «ajoyib quyosh botishi» kabi oddiy jumlalarni o‘lchanadigan ustuvorliklarga aylantiradi.", "map_first": "Xarita orqali izlash", "map_first_desc": "Nomzod shaharlarni xaritada ko‘ring va ularning O‘zbekiston bo‘yicha joylashuvini tahlil qiling.", "transparent": "Shaffof baholash", "transparent_desc": "Afzalliklar, matn o‘xshashligi, neyron tarmoq bahosi va fikr-mulohazani tushunarli ballga birlashtiradi.", "feedback_learning": "Fikr-mulohaza orqali o‘rganish", "feedback_desc": "Yoqdi va mos emas signallari yengil bandit ko‘rsatkichini yangilab, prototipni moslashtiradi.",
+    },
+}
+
+CITY_DESCRIPTIONS = {
+    "Samarkand": {"ru": "Крупный город Шёлкового пути, сочетающий всемирно известную архитектуру, активный туризм, красивые вечерние виды, рестораны, университеты и хорошее междугороднее сообщение.", "uz": "Ipak yo‘lining yirik shahri: mashhur me’morchilik, faol turizm, chiroyli kechki manzaralar, restoranlar, universitetlar va yaxshi shaharlararo aloqalarni birlashtiradi."},
+    "Bukhara": {"ru": "Компактный исторический город со спокойной атмосферой, сильной культурной идентичностью, красивыми закатами над старой архитектурой и сравнительно доступным прототипным профилем.", "uz": "Sokin muhitga, kuchli madaniy o‘ziga xoslikka, tarixiy me’morchilik ustidagi go‘zal quyosh botishlariga va nisbatan hamyonbop prototip profiliga ega tarixiy shahar."},
+    "Khiva": {"ru": "Небольшой город-крепость, особенно сильный по исторической атмосфере, фотографии, видам на закат, пешеходной доступности и спокойному образу жизни.", "uz": "Tarixiy muhit, fotografiya, quyosh botishi manzaralari, piyoda yurish va sokin hayot tarzi bilan ajralib turadigan kichik devorli tarixiy shahar."},
+    "Nukus": {"ru": "Более тихая и доступная региональная столица, известная необычным искусством и каракалпакской культурой, пустынным окружением и меньшим числом услуг большого города.", "uz": "O‘ziga xos san’at va Qoraqalpoq madaniyati, cho‘l muhiti hamda yirik shaharlarga qaraganda kamroq xizmatlarga ega, sokinroq va hamyonbop hududiy markaz."},
+    "Fergana": {"ru": "Зелёный региональный город Ферганской долины с сильными рынками, доступными продуктами, семейной средой и хорошим доступом к природным местам долины.", "uz": "Bozorlar, hamyonbop oziq-ovqat, oilaviy muhit va vodiydagi tabiiy joylarga yaxshi chiqish imkoniga ega Farg‘ona vodiysidagi yashil shahar."},
+    "Andijan": {"ru": "Коммерчески активный город долины с сильными местными рынками, сравнительно доступным прототипным профилем, семейными услугами и региональными деловыми возможностями.", "uz": "Faol mahalliy bozorlar, nisbatan hamyonbop prototip profili, oilaviy xizmatlar va hududiy biznes imkoniyatlariga ega savdo shahri."},
+    "Namangan": {"ru": "Большой, но сравнительно спокойный город долины, известный садами, рынками, семейной жизнью и доступом к более зелёным ландшафтам.", "uz": "Bog‘lari, bozorlari, oilaviy hayoti va yashil manzaralarga chiqishi bilan tanilgan, nisbatan sokin vodiy shahri."},
+    "Qarshi": {"ru": "Доступный региональный центр с практичным и более спокойным образом жизни, местной промышленностью, железнодорожным сообщением и меньшим числом развлечений.", "uz": "Amaliy va sokinroq hayot tarzi, mahalliy sanoat, temiryo‘l aloqalari hamda ko‘ngilochar imkoniyatlari yirik shaharlarga qaraganda kamroq bo‘lgan hamyonbop hududiy markaz."},
+    "Termez": {"ru": "Южный город с важным археологическим наследием, выразительным речным и пустынным светом, тёплой погодой и более медленным региональным ритмом жизни.", "uz": "Muhim arxeologik meros, daryo va cho‘l manzaralarining yorug‘ligi, iliq ob-havo va sokinroq hududiy hayot ritmiga ega janubiy shahar."},
+    "Jizzakh": {"ru": "Практичный и доступный город с хорошим доступом к горам и природе, спокойным ритмом и удобным восточно-западным автомобильным и железнодорожным положением.", "uz": "Tog‘ va tabiat maskanlariga qulay chiqish, sokin ritm va sharq-g‘arb avtomobil hamda temiryo‘l yo‘nalishlariga qulay joylashuvga ega amaliy shahar."},
+    "Gulistan": {"ru": "Небольшая тихая региональная столица с одним из самых сильных демонстрационных профилей доступности, простым транспортом и ограниченной ночной жизнью.", "uz": "Namuna sifatida eng kuchli hamyonboplik profillaridan biriga, sodda transport aloqalariga va cheklangan tungi hayotga ega kichik, sokin hududiy markaz."},
+    "Navoi": {"ru": "Плановый промышленный город с относительно сильным потенциалом занятости, упорядоченной городской средой, парками и полезными воздушными и железнодорожными связями.", "uz": "Nisbatan kuchli bandlik salohiyati, tartibli shahar muhiti, bog‘lar va foydali havo hamda temiryo‘l aloqalariga ega rejalashtirilgan sanoat shahri."},
+    "Urgench": {"ru": "Практичная сервисная и транспортная база Хорезма с аэропортом и железной дорогой, местными рынками и удобной близостью к Хиве.", "uz": "Xorazm uchun aeroport va temiryo‘l, mahalliy bozorlar hamda Xivaga yaqinligi bilan qulay xizmat va transport markazi."},
+    "Kokand": {"ru": "Исторический город Ферганской долины с дворцовой архитектурой, традиционными ремёслами, рынками и сбалансированным сочетанием доступности и культурной жизни.", "uz": "Saroy me’morchiligi, an’anaviy hunarmandchilik, bozorlar va hamyonboplik bilan madaniy qiziqishning muvozanatli uyg‘unligiga ega tarixiy vodiy shahri."},
+    "Shahrisabz": {"ru": "Небольшой исторический город к югу от Самарканда с горными пейзажами, крупным тимуридским наследием, красивыми закатами и спокойным образом жизни.", "uz": "Samarqand janubidagi tog‘ manzaralari, Temuriylar merosi, chiroyli quyosh botishlari va sokin hayot tarziga ega kichik tarixiy shahar."},
+    "Tashkent": {"ru": "Крупнейший городской центр Узбекистана с сильнейшим сочетанием рабочих мест, университетов, медицины, общественного транспорта, ресторанов и развлечений, но с более высоким прототипным профилем стоимости и более быстрым ритмом.", "uz": "O‘zbekistonning eng yirik shahri: ish o‘rinlari, universitetlar, tibbiyot, jamoat transporti, restoranlar va ko‘ngilochar imkoniyatlari kuchli, biroq prototip xarajat profili yuqoriroq va hayot ritmi tezroq."},
+}
+
+# -----------------------------------------------------------------------------
+# Persistent visit counter (no database in the repository)
+# CounterAPI is a public external counter service.  We increment once per
+# Streamlit browser session, then display the cumulative value throughout the app.
+# -----------------------------------------------------------------------------
+COUNTER_NAMESPACE = "uzbekistan-ai-map-living-advisor.streamlit.app"
+COUNTER_ACTION = "view"
+COUNTER_KEY = "app-users"
+COUNTER_URL = f"https://counterapi.com/api/{COUNTER_NAMESPACE}/{COUNTER_ACTION}/{COUNTER_KEY}"
+
+
+def t(key: str, lang: str | None = None) -> str:
+    lang = lang or st.session_state.get("language", "en")
+    return TRANSLATIONS.get(lang, TRANSLATIONS["en"]).get(key, TRANSLATIONS["en"].get(key, key))
+
+
+def city_description(row: pd.Series, lang: str | None = None) -> str:
+    lang = lang or st.session_state.get("language", "en")
+    city = str(row.get("city", ""))
+    if lang in {"ru", "uz"} and city in CITY_DESCRIPTIONS:
+        return CITY_DESCRIPTIONS[city][lang]
+    return str(row.get("description", ""))
+
+
+def localized_feature_label(feature: str, lang: str | None = None) -> str:
+    lang = lang or st.session_state.get("language", "en")
+    if lang == "en":
+        return FEATURE_LABELS[feature]
+    maps = {
+        "ru": {"affordability":"Доступность проживания","grocery_affordability":"Доступность продуктов","entertainment":"Развлечения","sunset_scenery":"Закаты и пейзажи","safety":"Безопасность","jobs":"Работа и карьера","internet":"Интернет и удалённая работа","healthcare":"Медицина","education":"Образование","heritage":"История и культура","nature":"Природа","climate_comfort":"Комфорт климата","quietness":"Спокойный образ жизни","mobility":"Транспорт"},
+        "uz": {"affordability":"Yashash narxi","grocery_affordability":"Oziq-ovqat narxi","entertainment":"Ko‘ngilochar imkoniyatlar","sunset_scenery":"Quyosh botishi va manzara","safety":"Xavfsizlik","jobs":"Ish va karyera","internet":"Internet va masofaviy ish","healthcare":"Tibbiyot","education":"Ta’lim","heritage":"Tarix va madaniyat","nature":"Tabiat","climate_comfort":"Iqlim qulayligi","quietness":"Sokin hayot","mobility":"Transport"},
+    }
+    return maps.get(lang, {}).get(feature, FEATURE_LABELS[feature])
+
+
+def record_app_visit() -> int | None:
+    """Increment the persistent counter once per Streamlit session."""
+    if st.session_state.get("usage_counted"):
+        return st.session_state.get("usage_count")
+    try:
+        response = requests.get(
+            COUNTER_URL,
+            params={"startNumber": 0},
+            timeout=5,
+            headers={"User-Agent": "Akbarxon-AI-Living-Advisor/1.0"},
+        )
+        response.raise_for_status()
+        payload = response.json()
+        value = int(payload.get("value"))
+        if value < 1:
+            return None
+        st.session_state["usage_counted"] = True
+        st.session_state["usage_count"] = value
+        return value
+    except (requests.RequestException, ValueError, TypeError, KeyError):
+        return None
+
+
+def render_usage_counter(count: int | None) -> None:
+    display = f"{count:,}" if isinstance(count, int) and count > 0 else "—"
+    label = t("app_visits")
+    note = t("visit_note")
+    st.markdown(
+        f"<div class='usage-counter'><span class='usage-icon'>👥</span><div><div class='usage-label'>{html.escape(label)}</div><div class='usage-value'>{display}</div><div class='usage-note'>{html.escape(note)}</div></div></div>",
+        unsafe_allow_html=True,
+    )
+
+
 def city_image_file(city: object) -> str:
     """Return the repository-relative image assigned to a city."""
     filename = CITY_IMAGE_FILES.get(str(city).strip(), FALLBACK_CITY_IMAGE)
@@ -189,7 +374,7 @@ def parse_preference_weights(query: str) -> Tuple[Dict[str, float], List[str]]:
         for phrase in phrases:
             if phrase in text:
                 weights[feature] += 1.4 if " " in phrase else 1.0
-                matches.append(f"{FEATURE_LABELS[feature]} <- '{phrase}'")
+                matches.append(f"{localized_feature_label(feature)} <- '{phrase}'")
 
     if "family" in text or "children" in text or "kids" in text:
         weights["safety"] += 1.1
@@ -384,7 +569,7 @@ def top_reasons(row: pd.Series, weights: Dict[str, float], n: int = 4) -> List[s
     for feature in FEATURE_COLUMNS:
         contributions.append((weights.get(feature, 0.0) * float(row[feature]), feature, float(row[feature])))
     contributions.sort(reverse=True)
-    return [f"{FEATURE_LABELS[feature]}: {value:.0f}/100" for _, feature, value in contributions[:n]]
+    return [f"{localized_feature_label(feature)}: {value:.0f}/100" for _, feature, value in contributions[:n]]
 
 
 def cluster_cities(df: pd.DataFrame) -> pd.DataFrame:
@@ -489,7 +674,7 @@ def weather_code_label(code: int | float | None) -> str:
 
 def radar_figure(row: pd.Series, features: List[str]) -> go.Figure:
     values = [float(row[feature]) for feature in features]
-    labels = [FEATURE_LABELS[feature] for feature in features]
+    labels = [localized_feature_label(feature) for feature in features]
     fig = go.Figure(
         data=[go.Scatterpolar(r=values + [values[0]], theta=labels + [labels[0]], fill="toself", name=str(row["city"]))]
     )
@@ -596,6 +781,12 @@ def inject_css() -> None:
         .result-note {font-size:.78rem; color:var(--muted); line-height:1.55;}
 
         .team-card {padding:1.05rem 1rem; border:1px solid var(--border); border-radius:12px; background:white; margin-bottom:1rem;}
+
+        .usage-counter {display:flex; align-items:center; gap:.7rem; padding:.75rem .9rem; margin:.35rem 0 1rem 0; border:1px solid #dfe8e3; border-radius:12px; background:linear-gradient(135deg,#f3f8f5,#ffffff);}
+        .usage-icon {width:30px; height:30px; border-radius:50%; display:grid; place-items:center; background:#e7f0eb; font-size:16px; flex:0 0 auto;}
+        .usage-label {font-size:.67rem; text-transform:uppercase; letter-spacing:.1em; color:var(--muted);}
+        .usage-value {font-size:1.12rem; font-weight:600; line-height:1.15; color:var(--primary-dark);}
+        .usage-note {font-size:.64rem; color:var(--muted); margin-top:.1rem;}
         .team-title {font-size:.85rem; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin-bottom:.65rem;}
         .team-name {font-size:.9rem; line-height:1.65;}
         .prototype-note {font-size:.8rem; color:#666; line-height:1.55; padding:.85rem; background:#f1f6f3; border-radius:10px; border:1px solid #e3eee8;}
@@ -646,16 +837,23 @@ def render_top_brand() -> None:
 
 def render_hero() -> None:
     hero = image_data_uri("hero-camping.jpg")
+    lang = st.session_state.get("language", "en")
+    hero_content = {
+        "en": ("AI-powered city discovery · Uzbekistan", "Find a place<br>that fits your life", "Describe the lifestyle you want. The advisor translates your words into priorities, ranks Uzbekistan cities, maps the results, and learns from feedback.", "Start Exploring"),
+        "ru": ("ИИ-поиск городов · Узбекистан", "Найдите место,<br>которое подходит вам", "Опишите желаемый образ жизни. Консультант преобразует ваши слова в приоритеты, ранжирует города Узбекистана, показывает результаты на карте и обучается на отзывах.", "Начать исследование"),
+        "uz": ("AI yordamida shahar izlash · O‘zbekiston", "Hayotingizga mos<br>joyni toping", "Istagan turmush tarzingizni tasvirlang. Maslahatchi so‘zlaringizni ustuvorliklarga aylantiradi, O‘zbekiston shaharlarini saralaydi, natijalarni xaritada ko‘rsatadi va fikrlardan o‘rganadi.", "Izlashni boshlash"),
+    }
+    hero_eyebrow, hero_title, hero_subtitle, hero_button = hero_content.get(lang, hero_content["en"])
     st.markdown(
         f"""
         <div class="hero-shell">
           <img src="{hero}" alt="Lifestyle landscape design visual">
           <div class="hero-overlay"></div>
           <div class="hero-copy">
-            <div class="hero-eyebrow">AI-powered city discovery · Uzbekistan</div>
-            <div class="hero-title">Find a place<br>that fits your life</div>
-            <div class="hero-sub">Describe the lifestyle you want. The advisor translates your words into priorities, ranks Uzbekistan cities, maps the results, and learns from feedback.</div>
-            <a class="hero-pill" href="#advisor">Start Exploring &nbsp;→</a>
+            <div class="hero-eyebrow">{html.escape(hero_eyebrow)}</div>
+            <div class="hero-title">{hero_title}</div>
+            <div class="hero-sub">{html.escape(hero_subtitle)}</div>
+            <a class="hero-pill" href="#advisor">{html.escape(hero_button)} &nbsp;→</a>
           </div>
           <div class="hero-bars"><span></span><span></span><span></span><span></span></div>
         </div>
@@ -681,7 +879,7 @@ def build_city_card_html(row: pd.Series, rank: int | None = None) -> str:
     """Build one self-contained card without Markdown blank-line parsing issues."""
     city = html.escape(str(row.get("city", "Unknown city")))
     region = html.escape(str(row.get("region", "")))
-    description = html.escape(str(row.get("description", "")))
+    description = html.escape(city_description(row))
     image = html.escape(image_data_uri(city_image_file(row.get("city", ""))), quote=True)
     tags = [item.strip() for item in str(row.get("tags", "")).split(",") if item.strip()][:3]
     chips = "".join(f'<span class="chip">{html.escape(tag)}</span>' for tag in tags)
@@ -692,7 +890,7 @@ def build_city_card_html(row: pd.Series, rank: int | None = None) -> str:
     except (TypeError, ValueError):
         score = 0.0
     score_html = (
-        f'<span class="city-card-score">{score:.1f} match</span>'
+        f'<span class="city-card-score">{score:.1f}</span>'
         if math.isfinite(score) and score > 0
         else ""
     )
@@ -745,19 +943,19 @@ def render_experience_rows() -> None:
 
 def render_feedback_buttons(city: str, feedback_state: Dict[str, Dict[str, int]], key_prefix: str) -> None:
     left, right, stats = st.columns([1, 1, 2.4])
-    if left.button("👍 Like", key=f"{key_prefix}_like_{city}", use_container_width=True):
+    if left.button(f"👍 {t('like')}", key=f"{key_prefix}_like_{city}", use_container_width=True):
         feedback_state[city]["likes"] += 1
         save_feedback_state(feedback_state)
-        st.toast(f"Feedback saved for {city}")
+        st.toast(f"{t('feedback_saved')} {city}")
         st.rerun()
-    if right.button("👎 Not for me", key=f"{key_prefix}_dislike_{city}", use_container_width=True):
+    if right.button(f"👎 {t('not_for_me')}", key=f"{key_prefix}_dislike_{city}", use_container_width=True):
         feedback_state[city]["dislikes"] += 1
         save_feedback_state(feedback_state)
-        st.toast(f"Feedback saved for {city}")
+        st.toast(f"{t('feedback_saved')} {city}")
         st.rerun()
     values = feedback_state[city]
     stats.caption(
-        f"Prototype feedback: {values['likes']} likes · {values['dislikes']} dislikes · "
+        f"Feedback: {values['likes']} likes · {values['dislikes']} dislikes · "
         f"bandit confidence {bandit_posterior(city, feedback_state):.2f}"
     )
 
@@ -787,9 +985,9 @@ def render_home(
     render_hero()
 
     render_section_head(
-        "Featured matches",
-        "Lifestyle ideas, ranked for you",
-        "A first look at cities selected by the same AI engine used in the full recommendation workspace.",
+        t("featured"),
+        t("featured_title"),
+        t("featured_sub"),
     )
     ranked = st.session_state["ranked_results"].head(3)
     cols = st.columns(3)
@@ -799,18 +997,18 @@ def render_home(
 
     st.markdown("<div style='height:3rem'></div>", unsafe_allow_html=True)
     render_section_head(
-        "The experience",
-        "Minimal design, useful intelligence",
-        "The uploaded UI's calm, image-led design language is preserved while the interaction is rebuilt around city discovery.",
+        t("experience"),
+        t("experience_title"),
+        t("experience_sub"),
     )
     render_experience_rows()
 
     st.markdown('<div id="advisor"></div>', unsafe_allow_html=True)
     st.markdown("<div style='height:2rem'></div>", unsafe_allow_html=True)
     render_section_head(
-        "AI advisor",
-        "Describe your ideal place",
-        "Use natural language now; detailed controls are available in the sidebar and the Recommend workspace.",
+        t("advisor"),
+        t("advisor_title"),
+        t("advisor_sub"),
     )
     with st.form("home_quick_advisor"):
         quick_query = st.text_area(
@@ -837,13 +1035,13 @@ def render_recommend(
     top_n: int,
 ) -> None:
     render_section_head(
-        "Personalized advisor",
-        "Tell the AI what matters",
-        "Text is the main signal. The ranking engine combines interpretable lifestyle features, NLP similarity, a neural model, and feedback.",
+        t("personalized"),
+        t("tell_ai"),
+        t("tell_ai_sub"),
     )
 
     query = st.text_area(
-        "What kind of place are you looking for?",
+        t("question"),
         value=st.session_state.get(
             "active_query",
             "I want an affordable city with cheap groceries, beautiful sunsets, and good entertainment.",
@@ -851,7 +1049,7 @@ def render_recommend(
         height=120,
         help="Examples: family-friendly and safe; best for remote work; historic and walkable; quiet retirement city.",
     )
-    if st.button("Find my best cities", type="primary", use_container_width=True):
+    if st.button(t("find_best"), type="primary", use_container_width=True):
         ranked, weights, matches = rank_cities(df, query, slider_weights, feedback_state, top_n)
         st.session_state["ranked_results"] = ranked
         st.session_state["active_weights"] = weights
@@ -863,19 +1061,19 @@ def render_recommend(
     weights = st.session_state["active_weights"]
     matches = st.session_state["query_matches"]
 
-    with st.expander("How the AI interpreted your request", expanded=False):
-        st.write("Detected signals:")
+    with st.expander(t("interpret"), expanded=False):
+        st.write(t("signals"))
         for match in matches:
             st.write(f"- {match}")
         weight_table = pd.DataFrame(
             {
-                "Preference": [FEATURE_LABELS[key] for key in FEATURE_COLUMNS],
+                t("preference"): [localized_feature_label(key) for key in FEATURE_COLUMNS],
                 "Weight (%)": [round(weights[key] * 100, 1) for key in FEATURE_COLUMNS],
             }
         ).sort_values("Weight (%)", ascending=False)
         st.dataframe(weight_table, hide_index=True, use_container_width=True)
 
-    st.markdown("### Top matches")
+    st.markdown(f"### {t('top_matches')}")
     for index, row in ranked.iterrows():
         reasons = top_reasons(row, weights)
         image_path = city_image_path(row["city"])
@@ -898,9 +1096,9 @@ def render_recommend(
             )
             render_feedback_buttons(str(row["city"]), feedback_state, f"rec_{index}")
 
-    st.markdown("### Optional live context")
-    selected_live_city = st.selectbox("City", ranked["city"].tolist(), key="live_city")
-    if st.button("Fetch weather + city summary"):
+    st.markdown(f"### {t('optional_live')}")
+    selected_live_city = st.selectbox(t("city"), ranked["city"].tolist(), key="live_city")
+    if st.button(t("fetch_context")):
         city_row = df.loc[df["city"] == selected_live_city].iloc[0]
         with st.spinner("Retrieving public context..."):
             try:
@@ -908,13 +1106,13 @@ def render_recommend(
                 weather = fetch_live_weather(float(city_row["lat"]), float(city_row["lon"]))
                 current = weather.get("current", {})
                 c1, c2, c3 = st.columns(3)
-                c1.metric("Temperature", f"{current.get('temperature_2m', '—')} °C")
-                c2.metric("Feels like", f"{current.get('apparent_temperature', '—')} °C")
-                c3.metric("Conditions", weather_code_label(current.get("weather_code")))
+                c1.metric(t("temp"), f"{current.get('temperature_2m', '—')} °C")
+                c2.metric(t("feels"), f"{current.get('apparent_temperature', '—')} °C")
+                c3.metric(t("conditions"), weather_code_label(current.get("weather_code")))
                 st.write(wiki.get("extract", "No summary was returned."))
                 source_url = wiki.get("content_urls", {}).get("desktop", {}).get("page")
                 if source_url:
-                    st.link_button("Open source article", source_url)
+                    st.link_button(t("source"), source_url)
             except requests.RequestException as exc:
                 st.warning(f"Live data is temporarily unavailable: {exc}")
 
@@ -923,20 +1121,20 @@ def render_map_compare(df: pd.DataFrame, slider_weights, feedback_state, top_n) 
     ensure_default_results(df, slider_weights, feedback_state, top_n)
     ranked = st.session_state["ranked_results"]
     render_section_head(
-        "Map & compare",
-        "See the recommendations geographically",
-        "The map uses OpenStreetMap tiles and overlays the prototype Uzbekistan city profiles and current recommendation ranking.",
+        t("map_compare"),
+        t("map_title"),
+        t("map_sub"),
     )
     st_folium(build_map(df, ranked), width=None, height=590, returned_objects=[])
 
-    st.markdown("### Recommendation score comparison")
+    st.markdown(f"### {t('score_compare')}")
     chart_df = ranked[["city", "match_score"]].sort_values("match_score")
     fig = px.bar(chart_df, x="match_score", y="city", orientation="h", range_x=[0, 100])
     fig.update_layout(height=390, margin=dict(l=20, r=20, t=20, b=20), xaxis_title="Match score", yaxis_title="")
     st.plotly_chart(fig, use_container_width=True)
 
     compare_names = st.multiselect(
-        "Choose up to three cities for detailed comparison",
+        t("choose_cities"),
         df["city"].tolist(),
         default=ranked["city"].head(2).tolist(),
         max_selections=3,
@@ -950,17 +1148,17 @@ def render_map_compare(df: pd.DataFrame, slider_weights, feedback_state, top_n) 
         row = df.loc[df["city"] == city].iloc[0]
         with column:
             st.plotly_chart(radar_figure(row, comparison_features), use_container_width=True)
-            st.caption(row["description"])
+            st.caption(city_description(row))
 
 
 def render_cities(df: pd.DataFrame, feedback_state: Dict[str, Dict[str, int]]) -> None:
     render_section_head(
-        "City explorer",
-        "Browse every prototype profile",
-        "Each profile now uses the city-specific photo supplied for that named city, while preserving the uploaded location-card design.",
+        t("city_explorer"),
+        t("city_explorer_title"),
+        t("city_explorer_sub"),
     )
 
-    search = st.text_input("Filter cities", placeholder="Search by city, region, or tag")
+    search = st.text_input(t("filter_cities"), placeholder="Search by city, region, or tag")
     filtered = df.copy()
     if search.strip():
         needle = search.lower().strip()
@@ -977,22 +1175,22 @@ def render_cities(df: pd.DataFrame, feedback_state: Dict[str, Dict[str, int]]) -
             with col:
                 render_city_card(row)
 
-    st.markdown("### Detailed city profile")
-    city = st.selectbox("Select a city", df["city"].tolist(), key="city_explorer")
+    st.markdown(f"### {t('profile')}")
+    city = st.selectbox(t("select_city"), df["city"].tolist(), key="city_explorer")
     row = df.loc[df["city"] == city].iloc[0]
     left, right = st.columns([1.15, 1])
     with left:
         st.image(city_image_path(city), use_container_width=True, caption=f"{city} city photo")
         st.markdown(f"## {row['city']}")
-        st.write(f"**Region:** {row['region']}")
-        st.write(row["description"])
-        st.write(f"**Tags:** {row['tags']}")
+        st.write(f"**{t('region')}:** {row['region']}")
+        st.write(city_description(row))
+        st.write(f"**{t('tags')}:** {row['tags']}")
         score_table = pd.DataFrame(
             {
-                "Dimension": [FEATURE_LABELS[feature] for feature in FEATURE_COLUMNS],
-                "Prototype score": [float(row[feature]) for feature in FEATURE_COLUMNS],
+                t("dimension"): [localized_feature_label(feature) for feature in FEATURE_COLUMNS],
+                t("score"): [float(row[feature]) for feature in FEATURE_COLUMNS],
             }
-        ).sort_values("Prototype score", ascending=False)
+        ).sort_values(t("score"), ascending=False)
         st.dataframe(score_table, hide_index=True, use_container_width=True)
     with right:
         st.plotly_chart(
@@ -1004,9 +1202,9 @@ def render_cities(df: pd.DataFrame, feedback_state: Dict[str, Dict[str, int]]) -
 
 def render_ai_lab(df: pd.DataFrame) -> None:
     render_section_head(
-        "AI laboratory",
-        "How the recommendation brain works",
-        "The prototype intentionally combines explainable rules with machine learning, a neural-network demonstration, and feedback learning.",
+        t("ai_lab"),
+        t("ai_title"),
+        t("ai_sub"),
     )
     c1, c2, c3, c4 = st.columns(4)
     items = [
@@ -1022,11 +1220,13 @@ def render_ai_lab(df: pd.DataFrame) -> None:
                 unsafe_allow_html=True,
             )
 
-    st.markdown("### Data-driven city archetypes")
+    st.markdown(f"### {t('data_archetypes')}")
     clustered = cluster_cities(df)
-    st.dataframe(clustered[["city", "region", "city_archetype"] + FEATURE_COLUMNS], hide_index=True, use_container_width=True)
+    cluster_view = clustered[["city", "region", "city_archetype"] + FEATURE_COLUMNS].copy()
+    cluster_view.columns = ["City", "Region", "Archetype"] + [localized_feature_label(f) for f in FEATURE_COLUMNS]
+    st.dataframe(cluster_view, hide_index=True, use_container_width=True)
 
-    st.markdown("### Project team")
+    st.markdown(f"### {t('team')}")
     st.markdown(
         """
         <div class="advisor-card">
@@ -1037,17 +1237,14 @@ def render_ai_lab(df: pd.DataFrame) -> None:
         """,
         unsafe_allow_html=True,
     )
-    st.warning(
-        "For production, replace illustrative scores and synthetic training data with licensed, dated, auditable sources. "
-        "Use a real database for feedback, user accounts, privacy controls, source citations, and model monitoring."
-    )
+    st.warning(t("production_warning"))
 
 
 def render_about() -> None:
     render_section_head(
-        "About the project",
-        "Living decisions, made easier to explore",
-        "A portfolio-ready prototype that turns broad lifestyle preferences into a structured, visual city-comparison workflow.",
+        t("about"),
+        t("about_title"),
+        t("about_sub"),
     )
     image = image_data_uri("detail-forest-2.jpg")
     st.markdown(
@@ -1066,7 +1263,7 @@ def render_about() -> None:
     )
     left, right = st.columns(2)
     with left:
-        st.markdown("### What is included")
+        st.markdown(f"### {t('included')}")
         st.markdown(
             """
             - Natural-language city preference search
@@ -1079,7 +1276,7 @@ def render_about() -> None:
             """
         )
     with right:
-        st.markdown("### UI source preservation")
+        st.markdown(f"### {t('ui_preserve')}")
         st.write(
             "The GitHub repository also contains the uploaded React/Tailwind UI project under `ui_source/`. "
             "Its `.env` file is intentionally excluded so secrets or environment-specific values are not published."
@@ -1113,6 +1310,7 @@ def main() -> None:
     inject_css()
     df = load_city_data()
     feedback_state = load_feedback_state(df["city"])
+    record_app_visit()
 
     with st.sidebar:
         st.markdown(
@@ -1124,30 +1322,48 @@ def main() -> None:
             """,
             unsafe_allow_html=True,
         )
-        st.markdown("#### Your priorities")
-        st.caption("Text is the main input. Sliders let you emphasize or correct specific priorities.")
-        top_n = st.slider("Number of recommendations", 3, 8, 5)
-        with st.expander("Advanced preference sliders", expanded=False):
+        language_display = st.selectbox(t("language"), list(LANGUAGE_OPTIONS.keys()), index=list(LANGUAGE_OPTIONS.values()).index(st.session_state.get("language", "en")))
+        selected_language = LANGUAGE_OPTIONS[language_display]
+        if selected_language != st.session_state.get("language", "en"):
+            st.session_state["language"] = selected_language
+            st.rerun()
+        lang = st.session_state.get("language", "en")
+        sidebar_count = st.session_state.get("usage_count")
+        render_usage_counter(sidebar_count)
+        st.markdown(f"#### {t('your_priorities')}")
+        st.caption(t("priority_caption"))
+        top_n = st.slider(t("num_recs"), 3, 8, 5)
+        with st.expander(t("advanced"), expanded=False):
             slider_weights = {
-                feature: float(st.slider(FEATURE_LABELS[feature], 0, 5, 0, key=f"slider_{feature}"))
+                feature: float(st.slider(localized_feature_label(feature), 0, 5, 0, key=f"slider_{feature}"))
                 for feature in FEATURE_COLUMNS
             }
         st.divider()
         st.markdown(
-            """
-            <div class="prototype-note"><b>Prototype note</b><br>City scores are illustrative, not official statistics. Verify housing, employment, safety, healthcare, visa, and legal information before relocating.</div>
-            """,
+            f"<div class=\"prototype-note\"><b>{html.escape(t('prototype_note'))}</b><br>{html.escape(t('prototype_copy'))}</div>",
             unsafe_allow_html=True,
         )
 
     render_top_brand()
-    page = st.radio(
+    nav_labels = {
+        "Home": t("nav_home"),
+        "Recommend": t("nav_recommend"),
+        "Map & Compare": t("nav_map"),
+        "Cities": t("nav_cities"),
+        "AI Lab": t("nav_ai"),
+        "About": t("nav_about"),
+    }
+    nav_choice = st.radio(
         "Navigation",
-        ["Home", "Recommend", "Map & Compare", "Cities", "AI Lab", "About"],
+        list(nav_labels.values()),
         horizontal=True,
         label_visibility="collapsed",
     )
+    page = next(key for key, value in nav_labels.items() if value == nav_choice)
     st.divider()
+
+    # Show the cumulative counter in the main canvas on every navigation page.
+    render_usage_counter(st.session_state.get("usage_count"))
 
     if page == "Home":
         render_home(df, slider_weights, feedback_state, top_n)

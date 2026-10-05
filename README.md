@@ -96,3 +96,14 @@ A QR code for the live app is included at `assets/app_qr_code.png`.
 ## Streamlit Cloud header-overlap fix
 
 This repository includes a layout fix for Streamlit Community Cloud's fixed native toolbar. The main content container now reserves a safe top spacing before the custom Akbarxon AI Living Advisor brand/navigation area, while the sidebar keeps its compact spacing. This prevents the application title and navigation from being hidden underneath the Streamlit toolbar on wide desktop layouts.
+
+
+## Visitor counter
+
+The app includes a cumulative visitor counter without adding a database to the GitHub repository. The app calls the public CounterAPI service once per Streamlit browser session and displays the cumulative total in the sidebar and main canvas. CounterAPI documents a public, no-auth counter endpoint and states that its free counter tools require no database management.
+
+The displayed metric is best interpreted as cumulative app visits/sessions, not a verified count of distinct human beings.
+
+## Languages
+
+Users can switch the presentation language from the sidebar: **English**, **Русский**, or **O'zbek**. Major navigation, controls, explanatory sections, city descriptions, and recommendation labels are localized.

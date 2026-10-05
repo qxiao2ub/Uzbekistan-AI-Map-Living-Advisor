@@ -1,0 +1,5 @@
+Akbarxon AI Living Advisor - cumulative visitor counter + English/Russian/Uzbek UI
+
+Entry point: app.py
+Counter: CounterAPI external persistence, incremented once per Streamlit session
+Languages: English, Русский, O'zbek

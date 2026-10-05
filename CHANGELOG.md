@@ -1,9 +1,8 @@
 # Changelog
 
-## City photo and city-card repair
-
-- Mapped all 16 Uzbekistan city profiles to the matching supplied city photograph.
-- Applied the mapping to featured cards, recommendation results, the full city grid, and detailed city profiles.
-- Rebuilt city-card markup as compact, escaped HTML rendered with `st.html()` so raw closing tags no longer appear in descriptions.
-- Added `CITY_IMAGE_MAPPING.md` for maintainers.
-- Preserved the earlier Streamlit Community Cloud toolbar-overlap fix and the complete imported UI source.
+## 2026-10-01
+- Added persistent cumulative app visit counter using a public external counter service; no database is stored in the repository.
+- Counter is incremented once per Streamlit browser session and displayed in the sidebar and main canvas on every navigation page.
+- Added three UI languages: English, Russian, and Uzbek.
+- Localized major navigation, controls, explanatory copy, feature labels, and all 16 city descriptions.
+- Preserved the previous city-specific photo mapping and top-toolbar overlap fix.
